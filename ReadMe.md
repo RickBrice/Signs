@@ -60,7 +60,7 @@ The generating script and resulting IFC file are:
 
 [All_Way_Stop.ifc](All_Way_Stop.ifc)
 
-![](.\images\All_Way_Stop.png)
+![](./images/All_Way_Stop.png)
 
 # Signs with Linear Placement Example
 This example demonstrates positioning objects in an IFC model using IfcLinesrPlacement and a linear referencing system. The example model is an IfcAlignment with 90-deg horizontal curve. Along the curve are 10 W1-8R Chevron signs.
