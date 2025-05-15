@@ -7,7 +7,9 @@ Scripts are written in Python and use the [IfcOpenShell toolkit](ifcopenshell.or
 
 All the resulting IFC files have been validated through the [buildingSmart Validation Service](validate.buildingsmart.org).
 
-The geometric representation of signs are limited to an extruded solid that does not represent the actual sign face, materials, or style information. Sign posts and other supporting structures are not modeled (signs are floating in space). Material data is not modeled. The important part of this example is the overall sign geometry, object placement, and the attached properties and attributes, not the human-friendly rendering or modelling of all attributes and properties.
+The geometric representation of signs are limited to an extruded solid that does not represent the actual sign face, materials, or style information. Sign posts and other supporting structures are not modeled (signs are floating in space). Material data is not modeled. The important part of this example is the overall sign geometry, object placement, and the attached properties and attributes, not the human-friendly rendering or modelling of all attributes and properties. 
+
+There is a very recent discussion on [LinkedIn ](https://www.linkedin.com/posts/marcinpszczolka_we-are-considering-supporting-textures-in-activity-7327593678804287488-1eu_/) about using texture maps to represent sign faces. This is a possibility, but has its drawbacks.
 
 
 # IfcSign model with bSDD classification
