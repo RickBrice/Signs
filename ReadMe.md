@@ -13,7 +13,7 @@ There is a very recent discussion on [LinkedIn ](https://www.linkedin.com/posts/
 
 
 # IfcSign model with bSDD classification
-The script illustrates an IfcSign model with attributes and properties classified using the [WSDOT Sign Data Dictionary](https://identifier.buildingsmart.org/uri/wsdot/wsdotsigns/0.1.0) hosted on the buildingSmart Data Dictionary Service (bSDD). The sign in this model has a simple geometric representatiom as a tesselated surface in the shape of a square. This key elements of this example is the classification, attribution, and properties using teh WSDOT sign data dictionary in the buildingSmart Data Dictionary service. 
+The script illustrates an IfcSign model with attributes and properties classified using the [WSDOT Sign Data Dictionary](https://identifier.buildingsmart.org/uri/wsdot/wsdotsigns/0.1.0) hosted on the buildingSmart Data Dictionary Service (bSDD). The sign in this model has a simple geometric representation as a tesselated surface in the shape of a square. This key elements of this example is the classification, attribution, and properties using the WSDOT sign data dictionary in the buildingSmart Data Dictionary service. 
 
 The generating script and resulting IFC file are:
 
@@ -33,15 +33,15 @@ The [Signs.csv](signs.csv) file was created with the following steps:
 1) Save [Chapter 2b](https://mutcd.fhwa.dot.gov/pdfs/11th_Edition/Chapter2b.pdf) and [Chapter 2c](https://mutcd.fhwa.dot.gov/pdfs/11th_Edition/Chapter2c.pdf) PDF files as Word documents
 2) Copy the sign information tables from Word to Excel
 3) Manually adjust the sign information so every sign type is on a single line
-4) Exclude all signs with variable dimensions (variable dimensions adds complexity not germain to this prototping activity).
-5) Append a sign shape code to each sign type
+4) Exclude all signs with variable dimensions (variable dimensions adds complexity not germain to this prototyping activity).
+5) Append a sign shape code to each sign type; O=octagon,T=triangle/yield, R=rectangle,P=pennant
 6) Save as a csv file
 
 The [Build_Sign_Library.py]() script reads the [MUTCD_Sign_Definitions_.csv](MUTCD_Sign_Definitions.csv) file and creates an IFC model with two IfcProjectLibrary instances. To keep the focus on the sign type libraries, bSDD content is not include. However, this can be easily added later once the DD content stabilizes.
 
-The "Unit Sign" IfcProjectLibrary instance has each sign type defined with unit dimensions. That is, all dimensions (X,Y,Z) have a value of 1". The idea is to limit the size of the library by reducing the number of geometric representations. When the geometry is mapped from IfcSignType to an instance of IfcSign the height, width, and thichness can be scaled to their actual values with IfcCarteiransformationOperator3DnonUniform.
+The "Unit Sign" IfcProjectLibrary instance has each sign type defined with unit dimensions. That is, all dimensions (X,Y,Z) have a value of 1". The idea is to limit the size of the library by reducing the number of geometric representations. When the geometry is mapped from IfcSignType to an instance of IfcSign the height, width, and thichness can be scaled to their actual values with IfcCartesianTransformationOperator3DnonUniform.
 
-The "Sign" IfcProjectLibrary instance has an entry for each sign type with its respective dimensions, such as R1-1 30x30, 36x36, and 48x48. Only the sign thickness needes to be scaled with IfcCarteiransformationOperator3DnonUniform.
+The "Sign" IfcProjectLibrary instance has an entry for each sign type with its respective dimensions, such as R1-1 30x30, 36x36, and 48x48. Only the sign thickness needs to be scaled with IfcCartesianTransformationOperator3DnonUniform.
 
 The resulting IFC file is [MUTCD_Sign_Library.ifc](MUTCD_Sign_Library.ifc)
 
@@ -63,7 +63,7 @@ The generating script and resulting IFC file are:
 ![](./images/All_Way_Stop.png)
 
 # Signs with Linear Placement Example
-This example demonstrates positioning objects in an IFC model using IfcLinesrPlacement and a linear referencing system. The example model is an IfcAlignment with 90-deg horizontal curve. Along the curve are 10 W1-8R Chevron signs.
+This example demonstrates positioning objects in an IFC model using IfcLinearPlacement and a linear referencing system. The example model is an IfcAlignment with 90-deg horizontal curve. Along the curve are 10 W1-8R Chevron signs.
 
 The generating script and resulting IFC file are:
 
@@ -79,8 +79,8 @@ The data is in HARN.WA-SF (HPGN Washington, South, US Foot).
 The purpose of the example is to demonstrate generating a model with many signs defined in external data sources. The following simplifications are made to limit the complexity of the script and keep it focused on its primary objective:
 
 1) Signs are named with their ObjectID and description from the source data. This makes it easy to look up the sign data in the csv file for any IfcSign in the model.
-2) Sign records with MUTCD designations that are available in the IfcProjectLibrary use the first IfcSignType with that designation along with the associated geometric representation. The sign width snd height in the source data are ignored. The size of the sign will be different than the source data, however this avoids the complexity of mapping the source data dimensions to predefined sign sizes.
-3) Sign records without MuUTCD designations and those with designations but not available in the IfcProjectLibrary, use an extruded rectangular shape for the geometric representation. The rectangle dinensions are taken directlynfrom the source data.
+2) Sign records with MUTCD designations that are available in the IfcProjectLibrary use the first IfcSignType with that designation along with the associated geometric representation. The sign width and height in the source data are ignored. The size of the sign will be different than the source data, however this avoids the complexity of mapping the source data dimensions to predefined sign sizes. This complexity doesn't add value to the example.
+3) Sign records without MuUTCD designations and those with designations but not available in the IfcProjectLibrary, use an extruded rectangular shape for the geometric representation. The rectangle dinensions are taken directly from the source data.
 4) All signs are 1" thick.
 
 
@@ -106,18 +106,18 @@ Most of the signs in these example IFC models will pass the MUTCD designation ch
 ![](./images/IDS_Report.png)
 
 # Use Cases for Sign Models
-When signs are modeled with an internationally accepted data standard and schema, IFC4X3, the possibilities are nearly boundless. The following discussion supposes some use cases for sign models that may be in our future.
+When signs are modeled with an internationally accepted data standard and schema, IFC4X3, the possibilities are nearly boundless. The following supposes some use cases for sign models that may be in our future.
 
 ## Automated design of signage for a highway project
-During the development phase a project, software could use the roadway geometric and other related data to automatrically determine the number, type, size, and location of signs that conform to the requirements of the MUTCD and other design specifications and criteria. This can potentially reduce design time and cost.
+During the development phase a project, software could use the roadway geometric and other related data to automatically determine the number, type, size, and location of signs that conform to the requirements of the MUTCD and other design specifications and criteria. This can potentially reduce design time and cost. Some software may already do this.
 
 ## Automated evaluate of as-build sign
-A corrilary to the first use case is automated evaluate of as-build conditions against MUTCH and other design specifications and criteria. Signage that does not conform to standards can be identified and corrected, as needed. This can be done as a construction activity and through the lifecycle of the asset.
+A corrilary to the first use case is automated evaluate of as-build conditions against MUTCD and other design specifications and criteria. Signage that does not conform to standards can be identified and corrected, as needed. This can be done as a construction activity and through the lifespan of the asset.
 
 ## Evaluation of proposed changes to signing standards
-Periodically, standards like the MUTCD change. With all sign data in a consistent format, automated assessments of proposed standards changes can be made. If the sign data is in state-by-state custom formats, national evaluation is difficult. However, if every state had sign data in national standard format, nationwide evaluatation of proposed changes to standards and regulations can be made.
+Periodically, standards like the MUTCD change. With all sign data in a consistent format, automated assessments of proposed standards changes can be made. If the sign data is in state-by-state custom formats, national evaluation is difficult. However, if every state had sign data in national standard format, nationwide evaluatation of proposed changes to standards and regulations can be more easily made.
 
 ## Better informed sign maintenance
-With sign data in a consistent format, predictive algorithms can be ran against the data to estimate when and where certain types of maintenance activities might be needed in the future. An example is addressing overgrown vegitation that obscures signs. Mixed with the LiDAR data and sign models, sign obstruction can be identified and maintenance plans can be developed. Predictive algorithms could estimate rates of vegitation grown and predict when in the future signs may become obscured and the future maintenance actions can be budgeted, planned, and scheduled. Similar predictions could be made about degredation of sign faces due to UV exposure based on the sign's location and orientation with respect to sunlight exposure. Past weather data, coupled with future exposure predictions and degedation models could inform sign maintenance decision making.
+With sign data in a consistent format, predictive algorithms can be ran against the data to estimate when and where certain types of maintenance activities might be needed in the future. An example is addressing overgrown vegetation that obscures signs. Mixed with the LiDAR data and sign models, sign obstruction can be identified and maintenance plans can be developed. Predictive algorithms could estimate rates of vegetation grown and predict when in the future signs may become obscured and the future maintenance actions can be budgeted, planned, and scheduled. Similar predictions could be made about degredation of sign faces due to UV exposure based on the sign's location and orientation with respect to sunlight exposure. Past weather data, cloud cover data, coupled with future exposure predictions and degedation models could inform sign maintenance and replacement decision making and risk assessment.
 
 The possibilities are nearly boundless.
