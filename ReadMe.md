@@ -29,7 +29,7 @@ The prototype MUTCD sign libraries are limited in scope and only includes the si
 
 The [Build_Sign_Library.py](Build_Sign_Library.py) script reads a CSV file with sign information, including Name, Designation, MUTCD Section, sizes for various applications, and a shape code. 
 
-The [Signs.csv](Signs.csv) file was created with the following steps:
+The [MUTCD_Sign_Definitions.csv](MUTCD_Sign_Definitions.csv) file was created with the following steps:
 1) Save [Chapter 2b](https://mutcd.fhwa.dot.gov/pdfs/11th_Edition/Chapter2b.pdf) and [Chapter 2c](https://mutcd.fhwa.dot.gov/pdfs/11th_Edition/Chapter2c.pdf) PDF files as Word documents
 2) Copy the sign information tables from Word to Excel
 3) Manually adjust the sign information so every sign type is on a single line
@@ -37,7 +37,7 @@ The [Signs.csv](Signs.csv) file was created with the following steps:
 5) Append a sign shape code to each sign type; O=octagon,T=triangle/yield, R=rectangle,P=pennant
 6) Save as a csv file
 
-The [Build_Sign_Library.py]() script reads the [MUTCD_Sign_Definitions_.csv](MUTCD_Sign_Definitions.csv) file and creates an IFC model with two IfcProjectLibrary instances. To keep the focus on the sign type libraries, bSDD content is not include. However, this can be easily added later once the DD content stabilizes.
+The [Build_Sign_Library.py]() script reads the [MUTCD_Sign_Definitions.csv](MUTCD_Sign_Definitions.csv) file and creates an IFC model with two IfcProjectLibrary instances. To keep the focus on the sign type libraries, bSDD content is not include. However, this can be easily added later once the DD content stabilizes.
 
 The "Unit Sign" IfcProjectLibrary instance has each sign type defined with unit dimensions. That is, all dimensions (X,Y,Z) have a value of 1". The idea is to limit the size of the library by reducing the number of geometric representations. When the geometry is mapped from IfcSignType to an instance of IfcSign the height, width, and thichness can be scaled to their actual values with IfcCartesianTransformationOperator3DnonUniform.
 
