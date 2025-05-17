@@ -29,7 +29,7 @@ The prototype MUTCD sign libraries are limited in scope and only includes the si
 
 The [Build_Sign_Library.py](Build_Sign_Library.py) script reads a CSV file with sign information, including Name, Designation, MUTCD Section, sizes for various applications, and a shape code. 
 
-The [Signs.csv](signs.csv) file was created with the following steps:
+The [Signs.csv](Signs.csv) file was created with the following steps:
 1) Save [Chapter 2b](https://mutcd.fhwa.dot.gov/pdfs/11th_Edition/Chapter2b.pdf) and [Chapter 2c](https://mutcd.fhwa.dot.gov/pdfs/11th_Edition/Chapter2c.pdf) PDF files as Word documents
 2) Copy the sign information tables from Word to Excel
 3) Manually adjust the sign information so every sign type is on a single line
