@@ -7,7 +7,7 @@ Scripts are written in Python and use the [IfcOpenShell toolkit](ifcopenshell.or
 
 All the resulting IFC files have been validated through the [buildingSmart Validation Service](validate.buildingsmart.org).
 
-The geometric representation of signs are limited to an extruded solid that does not represent the actual sign face, materials, or style information. Sign posts and other supporting structures are not modeled (signs are floating in space). Material data is not modeled. The important part of this example is the overall sign geometry, object placement, and the attached properties and attributes, not the human-friendly rendering or modelling of all attributes and properties. 
+The geometric representation of signs are limited to an extruded solid that does not represent the actual sign face, materials, or style information. Sign posts and other supporting structures are not modeled (signs are floating in space). Material data is not modeled. The important part of these examples are the overall sign geometry, object placement, and the attached properties and attributes, not the human-friendly rendering or modelling of all attributes and properties. 
 
 There is a very recent discussion on [LinkedIn ](https://www.linkedin.com/posts/marcinpszczolka_we-are-considering-supporting-textures-in-activity-7327593678804287488-1eu_/) about using texture maps to represent sign faces. This is a possibility, but has its drawbacks.
 
@@ -33,7 +33,7 @@ The [MUTCD_Sign_Definitions.csv](MUTCD_Sign_Definitions.csv) file was created wi
 1) Save [Chapter 2b](https://mutcd.fhwa.dot.gov/pdfs/11th_Edition/Chapter2b.pdf) and [Chapter 2c](https://mutcd.fhwa.dot.gov/pdfs/11th_Edition/Chapter2c.pdf) PDF files as Word documents
 2) Copy the sign information tables from Word to Excel
 3) Manually adjust the sign information so every sign type is on a single line
-4) Exclude all signs with variable dimensions (variable dimensions adds complexity not germain to this prototyping activity).
+4) Exclude all signs with variable dimensions (variable dimensions adds complexity not germane to this prototyping activity).
 5) Append a sign shape code to each sign type; O=octagon,T=triangle/yield, R=rectangle,P=pennant
 6) Save as a csv file
 
