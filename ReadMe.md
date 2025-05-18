@@ -82,7 +82,7 @@ The purpose of the example is to demonstrate generating a model with many signs 
 
 1) Signs are named with their ObjectID and description from the source data. This makes it easy to look up the sign data in the csv file for any IfcSign in the model.
 2) Sign records with MUTCD designations that are available in the IfcProjectLibrary use the first IfcSignType with that designation along with the associated geometric representation. The sign width and height in the source data are ignored. The size of the sign will be different than the source data, however this avoids the complexity of mapping the source data dimensions to predefined sign sizes. This complexity doesn't add value to the example.
-3) Sign records without MuUTCD designations and those with designations but not available in the IfcProjectLibrary, use an extruded rectangular shape for the geometric representation. The rectangle dinensions are taken directly from the source data.
+3) Sign records without MUTCD designations and those with designations but not available in the IfcProjectLibrary, use an extruded rectangular shape for the geometric representation. The rectangle dinensions are taken directly from the source data.
 4) All signs are 1" thick.
 
 
