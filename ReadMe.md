@@ -76,6 +76,8 @@ This example builds a model with all of the signs in the [Sign_Face.csv](Sign_Fa
 
 The data is in HARN.WA-SF (HPGN Washington, South, US Foot).
 
+Assume sign orientation is a direction measured from East and represents the plane of the face of the sign as observed by someone reading the sign.
+
 The purpose of the example is to demonstrate generating a model with many signs defined in external data sources. The following simplifications are made to limit the complexity of the script and keep it focused on its primary objective:
 
 1) Signs are named with their ObjectID and description from the source data. This makes it easy to look up the sign data in the csv file for any IfcSign in the model.
