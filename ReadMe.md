@@ -86,7 +86,7 @@ The purpose of the example is to demonstrate generating a model with many signs 
 4) All signs are 1" thick.
 
 
-3091 signs are modeled using 1416 types defined in the MUTCD sign library.
+3091 signs are modeled. 1416 of them use types defined in the MUTCD sign library.
 
 The generating script and resulting IFC file are:
 
