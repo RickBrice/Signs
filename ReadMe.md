@@ -88,7 +88,7 @@ The purpose of the example is to demonstrate generating a model with many signs 
 
 The generating script and resulting IFC file are:
 
-[Build_Test_Corridor_Signs.py]([Build_Test_Corridor_Signs.py)
+[Build_Test_Corridor_Signs.py](Build_Test_Corridor_Signs.py)
 
 [Test_Corridor_Signs.ifc](Test_Corridor_Signs.ifc)
 
