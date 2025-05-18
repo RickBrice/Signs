@@ -113,8 +113,8 @@ When signs are modeled with an internationally accepted data standard and schema
 ## Automated design of signage for a highway project
 During the development phase a project, software could use the roadway geometric and other related data to automatically determine the number, type, size, and location of signs that conform to the requirements of the MUTCD and other design specifications and criteria. This can potentially reduce design time and cost. Some software may already do this.
 
-## Automated evaluate of as-build sign
-A corrilary to the first use case is automated evaluate of as-build conditions against MUTCD and other design specifications and criteria. Signage that does not conform to standards can be identified and corrected, as needed. This can be done as a construction activity and through the lifespan of the asset.
+## Automated evaluatation of as-build signs
+A corrilary to the first use case is automated evaluatation of as-build conditions against MUTCD and other design specifications and criteria. Signage that does not conform to standards can be identified and corrected, as needed. This can be done as a construction activity and through the lifespan of the asset.
 
 ## Evaluation of proposed changes to signing standards
 Periodically, standards like the MUTCD change. With all sign data in a consistent format, automated assessments of proposed standards changes can be made. If the sign data is in state-by-state custom formats, national evaluation is difficult. However, if every state had sign data in national standard format, nationwide evaluatation of proposed changes to standards and regulations can be more easily made.
