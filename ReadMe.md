@@ -1,7 +1,7 @@
 # Introduction
 This repository contains scripts developed in support of the WSDOT ADCMS grant project for sign lifecycle asset management. The purpose of these scripts is to illustrate IFC models of signs, demonstrate sign classification and attribution using the buildingSmart Data Dictionary service, and prototype a method by which IFC models of signs can be created from sign data in an external data source. For this particular set of scripts, the external data source is data collected from LiDAR scans and processed by AI to identify sign features and related information. Other data sources could be agency sign databases and sign data systems. The general concepts remain the same regardless of the data source(s).
 
-The IFC 4x3 Add 2 specification is used for modelling. This is the first IFC specification that supports infrastructure. IfcSign and IfcSignType are new entities that are not available in earlier IFC specifications.
+The IFC4X3 ADD2 specification is used for modelling. This is the first IFC specification that supports infrastructure. IfcSign and IfcSignType are new entities that are not available in earlier IFC specifications.
 
 Scripts are written in Python and use the [IfcOpenShell toolkit](ifcopenshell.org). Screenshots are from the Bonsai plug-in to Blender.
 
