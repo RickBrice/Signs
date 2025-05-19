@@ -21,6 +21,8 @@ The generating script and resulting IFC file are:
 
 [bSDD_Classified_Sign.ifc](bSDD_Classified_Sign.ifc)
 
+![](./images/bSDD_Classified_Sign.png)
+
 
 # MUTCD Sign Library
 When developing the IfcSign with bSDD Classification example, it quickly became apparent that a library of predefined IfcSignType entities for the MUTCD would be very useful. Ultimately, publication of such a library should be the responsibility of FHWA, possibly developed in collaboration with AASHTO. This script generates two prototype libraries.
@@ -70,6 +72,8 @@ The generating script and resulting IFC file are:
 [Build_signs_with_Linear_Placement.py](Build_signs_with_Linear_Placement.py)
 
 [Signs_with_Linear_Placement.ifc](Signs_with_Linear_Placement.ifc)
+
+![](./images/Signs_with_Linear_Placement.png)
 
 # Test Corridor Signs
 This example builds a model with all of the signs in the [Sign_Face.csv](Sign_Face.csv) file from the Mach9 data source.
