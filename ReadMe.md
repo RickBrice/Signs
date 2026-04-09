@@ -13,7 +13,7 @@ There is a very recent discussion on [LinkedIn ](https://www.linkedin.com/posts/
 
 
 # IfcSign model with bSDD classification
-The script illustrates an IfcSign model with attributes and properties classified using the [WSDOT Sign Data Dictionary](https://identifier.buildingsmart.org/uri/wsdot/wsdotsigns) hosted on the buildingSmart Data Dictionary Service (bSDD). The sign in this model has a simple geometric representation as a tesselated surface in the shape of a square. This key elements of this example is the classification, attribution, and properties using the WSDOT sign data dictionary in the buildingSmart Data Dictionary service. 
+The script illustrates an IfcSign model with attributes and properties classified using the [WSDOT Sign Data Dictionary](https://identifier.buildingsmart.org/uri/wsdot/wsdotsigns/0.1.0) hosted on the buildingSmart Data Dictionary Service (bSDD). The sign in this model has a simple geometric representation as a tesselated surface in the shape of a square. This key elements of this example is the classification, attribution, and properties using the WSDOT sign data dictionary in the buildingSmart Data Dictionary service. 
 
 The generating script and resulting IFC file are:
 
@@ -46,6 +46,9 @@ The "Unit Sign" IfcProjectLibrary instance has each sign type defined with unit 
 The "Sign" IfcProjectLibrary instance has an entry for each sign type with its respective dimensions, such as R1-1 30x30, 36x36, and 48x48. Only the sign thickness needs to be scaled with IfcCartesianTransformationOperator3DnonUniform.
 
 The resulting IFC file is [MUTCD_Sign_Library.ifc](MUTCD_Sign_Library.ifc)
+
+### Example sign library from Brazil
+Brazil has a national BIM library, which has pre-defined objects for many different domains. Recently a library of road signs was added. See https://community.osarch.org/discussion/3384/road-sign-library-pt-br for more information. The FHWA MUTCD sign library mentioned above could be something like this in conjunction with the [Centralized BIM Transportation Library](https://nibs.org/centralized-bim-transportation-library-cbtl-report/) concept.
 
 # All Way Stop Example
 The All Way Stop example is a contrived 4-way intersection with a Stop (R1-1) and All Way (R1-3P) sign in an IfcElementAssembly at each approach to the intersection.
