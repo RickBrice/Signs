@@ -9,7 +9,7 @@ import ifcopenshell.api.context
 import ifcopenshell.api.unit
 import ifcopenshell.api.classification
 
-sign_dd_version = "0.5.0"
+sign_dd_version = "0.5"
 
 # create IFC model
 model = ifcopenshell.file(schema="IFC4X3")
@@ -63,8 +63,8 @@ ifcopenshell.api.pset.edit_pset(model,pset=pictorial_sign_quantities,properties=
 # relate type declaration with project
 rel_declares = model.createIfcRelDeclares(GlobalId=ifcopenshell.guid.new(),RelatingContext=project,RelatedDefinitions=[sign_type])
 
-# classify the IfcSignType as a wsdotGuideSign
-guide_sign = model.createIfcClassificationReference(Location=f"https://identifier.buildingsmart.org/uri/wsdot/wsdotsigns/{sign_dd_version}/class/wsdotGuideSign",Identification="wsdotGuideSign")
+# classify the IfcSignType as a SIGN
+guide_sign = model.createIfcClassificationReference(Location=f"https://identifier.buildingsmart.org/uri/wsdot/wsdotsigns/{sign_dd_version}/class/SIGN",Identification="SIGN")
 ifcopenshell.api.classification.add_reference(model,products=[sign_type],classification=wsdot_signs,reference=guide_sign)
 
 #
