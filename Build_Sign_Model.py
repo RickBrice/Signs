@@ -46,8 +46,8 @@ body_model_context = ifcopenshell.api.context.add_context(model,context_type="Mo
 # add the wsdotsigns classification system to the model
 wsdot_signs = ifcopenshell.api.classification.add_classification(model,classification="wsdotsigns")
 wsdot_signs.Source = "wsdot_test_dict" # classification is from the wsdot_test_dict bSDD
-wsdot_signs.Edition="0.1.0"
-wsdot_signs.Specification="https://search.bsdd.buildingsmart.org/uri/wsdot/wsdotsigns/0.1.0" # location of the bSDD
+wsdot_signs.Edition="0.5"
+wsdot_signs.Specification="https://search.bsdd.buildingsmart.org/uri/wsdot/wsdotsigns/0.5" # location of the bSDD
 
 
 # add properties to the sign type that are common for all instances of this type
@@ -62,7 +62,7 @@ ifcopenshell.api.pset.edit_pset(model,pset=pictorial_sign_quantities,properties=
 rel_declares = model.createIfcRelDeclares(GlobalId=ifcopenshell.guid.new(),RelatingContext=project,RelatedDefinitions=[sign_type])
 
 # classify the IfcSignType as a wsdotGuideSign
-guide_sign = model.createIfcClassificationReference(Location="https://identifier.buildingsmart.org/uri/wsdot/wsdotsigns/0.1.0/class/wsdotGuideSign",Identification="wsdotGuideSign")
+guide_sign = model.createIfcClassificationReference(Location="https://identifier.buildingsmart.org/uri/wsdot/wsdotsigns/0.5/class/SIGN",Identification="SIGN")
 ifcopenshell.api.classification.add_reference(model,products=[sign_type],classification=wsdot_signs,reference=guide_sign)
 
 #
@@ -92,8 +92,8 @@ rel = model.createIfcRelDefinesByType(GlobalId=ifcopenshell.guid.new(),RelatedOb
 # add properties to the sign that are specific to this instance
 sign_set = ifcopenshell.api.pset.add_pset(model,product=sign,name="Sign_Set")
 ifcopenshell.api.pset.edit_pset(model,pset=sign_set,properties={"sign_facing":"North","sign_side_of_rd":"R"})
-sign_set.HasProperties[0].Specification="https://identifier.buildingsmart.org/uri/wsdot/wsdotsigns/0.1.0/prop/sign_facing"
-sign_set.HasProperties[1].Specification="https://identifier.buildingsmart.org/uri/wsdot/wsdotsigns/0.1.0/prop/sign_side_of_rd"
+sign_set.HasProperties[0].Specification="https://identifier.buildingsmart.org/uri/wsdot/wsdotsigns/0.5/prop/sign_facing"
+sign_set.HasProperties[1].Specification="https://identifier.buildingsmart.org/uri/wsdot/wsdotsigns/0.5/prop/sign_side_of_rd"
 
 # add sign to spatial structure of the model
 ifcopenshell.api.spatial.assign_container(model,relating_structure=site,products=[sign])

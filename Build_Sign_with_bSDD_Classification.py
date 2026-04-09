@@ -91,10 +91,10 @@ sign = model.createIfcSign(GlobalId=ifcopenshell.guid.new(),Name="Sign_1",Object
 rel = model.createIfcRelDefinesByType(GlobalId=ifcopenshell.guid.new(),RelatedObjects=[sign],RelatingType=sign_type)
 
 # add properties to the sign that are specific to this instance
-sign_set = ifcopenshell.api.pset.add_pset(model,product=sign,name="Sign_Set")
-ifcopenshell.api.pset.edit_pset(model,pset=sign_set,properties={"sign_facing":"North","sign_side_of_rd":"R"})
-sign_set.HasProperties[0].Specification=f"https://identifier.buildingsmart.org/uri/wsdot/wsdotsigns/{sign_dd_version}/prop/sign_facing"
-sign_set.HasProperties[1].Specification=f"https://identifier.buildingsmart.org/uri/wsdot/wsdotsigns/{sign_dd_version}/prop/sign_side_of_rd"
+location_set = ifcopenshell.api.pset.add_pset(model,product=sign,name="Location")
+ifcopenshell.api.pset.edit_pset(model,pset=location_set,properties={"Facing":"North","SideOfRoad":"R"})
+location_set.HasProperties[0].Specification=f"https://identifier.buildingsmart.org/uri/wsdot/wsdotsigns/{sign_dd_version}/prop/Facing"
+location_set.HasProperties[1].Specification=f"https://identifier.buildingsmart.org/uri/wsdot/wsdotsigns/{sign_dd_version}/prop/SideOfRoad"
 
 # add sign to spatial structure of the model
 ifcopenshell.api.spatial.assign_container(model,relating_structure=site,products=[sign])
