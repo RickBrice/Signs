@@ -13,7 +13,7 @@ There is a very recent discussion on [LinkedIn ](https://www.linkedin.com/posts/
 
 
 # IfcSign model with bSDD classification
-The script illustrates an IfcSign model with attributes and properties classified using the [WSDOT Sign Data Dictionary](https://identifier.buildingsmart.org/uri/wsdot/wsdotsigns/0.1.0) hosted on the buildingSmart Data Dictionary Service (bSDD). The sign in this model has a simple geometric representation as a tesselated surface in the shape of a square. This key elements of this example is the classification, attribution, and properties using the WSDOT sign data dictionary in the buildingSmart Data Dictionary service. 
+The script illustrates an IfcSign model with attributes and properties classified using the [WSDOT Sign Data Dictionary](https://identifier.buildingsmart.org/uri/wsdot/wsdotsigns) hosted on the buildingSmart Data Dictionary Service (bSDD). The sign in this model has a simple geometric representation as a tesselated surface in the shape of a square. This key elements of this example is the classification, attribution, and properties using the WSDOT sign data dictionary in the buildingSmart Data Dictionary service. 
 
 The generating script and resulting IFC file are:
 
