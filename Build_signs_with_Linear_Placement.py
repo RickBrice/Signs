@@ -6,6 +6,7 @@ WSDOT Bridge and Structures Office
 """
 
 import ifcopenshell
+import ifcopenshell.api.unit
 import ifcopenshell.api.alignment
 import math
 
@@ -32,9 +33,9 @@ def build_model():
     points = [(0.,0.),(0.,R),(R,R)]
     radii = [R]
 
-    alignment = ifcopenshell.api.alignment.create_alignment_by_pi_method(model,"Ali",points,radii)
+    alignment = ifcopenshell.api.alignment.create_by_pi_method(model,"Ali",points,radii)
     ifcopenshell.api.spatial.reference_structure(model,products=[alignment],relating_structure=site) # alignment referenced in site
-    ifcopenshell.api.alignment.create_geometric_representation(model,alignment) # generate geometric representat of alignment from semantic definition
+    ifcopenshell.api.alignment.create_geometric_representations(model,alignment) # generate geometric representat of alignment from semantic definition
     ifcopenshell.api.alignment.add_stationing_to_alignment(model,alignment,100.0,2,2) # create stationing referent
 
     curve = ifcopenshell.api.alignment.get_curve(alignment) # get alignment geometry curve for linear placement basis
